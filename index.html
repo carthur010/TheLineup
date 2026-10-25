@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Lineup</title>
-<meta name="build" content="20261023013219">
+<meta name="build" content="20261025132854">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="The Lineup">
@@ -445,6 +445,8 @@ section.closed .bhead { border-bottom: 0; }
 .lb { width: 100%; border-collapse: collapse; font-size: 14px; }
 .lb th { text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 8px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
 .lb td { padding: 7px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.lb-sm td { padding: 5px 12px; } .lb-sm th { padding: 6px 12px; }
+.lb-st { padding: 8px 16px 2px; font-size: 13px; font-weight: 700; color: var(--muted); } .lb-st.live { color: var(--live); } .lb-st.stop { color: #c77700; }
 .lb td:nth-child(2) { white-space: normal; }
 .lb tr:last-child td { border-bottom: 0; }
 .lb .num { text-align: right; font-family: var(--display); font-weight: 700; font-size: 18px; }
@@ -3096,9 +3098,12 @@ button.brand, button.brand span { color: var(--accent); }
     return e.detail || "Final";
   }
   function golfBlock(e) {
-    const rows = e.rows.slice(0, 10);
+    // Home keeps it short: the top five and the round status; the full board is one tap away
+    const rows = e.rows.slice(0, 5);
+    const st = (e.detail || "").replace(/\s+-\s+/, " · ");
+    const stop = /Suspend|Delay|Postpon/i.test(st);
     const leadTotal = rows[0]?.total;
-    const body = rows.length ? `<div class="lb-wrap"><table class="lb">
+    const body = (st ? `<div class="lb-st ${stop ? "stop" : e.state === "in" ? "live" : ""}">${esc(st)}</div>` : "") + (rows.length ? `<div class="lb-wrap"><table class="lb lb-sm">
       <thead><tr><th>Pos</th><th>Player</th><th class="num">Total</th><th class="num">Today</th><th class="num">Thru</th></tr></thead>
       <tbody>${rows.map(r => {
         return `<tr class="${r.total && r.total === leadTotal ? "lead" : ""}">
@@ -3107,9 +3112,9 @@ button.brand, button.brand span { color: var(--accent); }
           <td class="num ${toPar(r.total)}">${esc(r.total || "–")}</td>
           <td class="num ${toPar(r.today)}">${esc(r.today || "–")}</td>
           <td class="num">${esc(r.thru || "–")}</td></tr>`;
-      }).join("")}</tbody></table></div>` : `<div class="empty">Tee times aren't posted yet.</div>`;
-    const more = `<div class="f-act" style="padding-bottom:12px"><button class="f-link" data-golf-open="${e.lg.id}">Full Leaderboard</button></div>`;
-    return block("ev-" + e.lg.id + e.id, `${e.lg.short || e.lg.name} · ${e.name}`, eventMeta(e), body + more);
+      }).join("")}</tbody></table></div>` : `<div class="empty">Tee times aren't posted yet.</div>`);
+    const more = `<div class="f-act" style="padding:2px 0 10px"><button class="f-link" data-golf-open="${e.lg.id}">Full Leaderboard</button></div>`;
+    return block("ev-" + e.lg.id + e.id, `${e.lg.short || e.lg.name} · ${e.name}`, "", body + more);
   }
   // Tennis: the day's singles matches, live first, then results, then what's next
   const CARET = '<svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>';
