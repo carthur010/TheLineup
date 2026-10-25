@@ -2,6 +2,9 @@
 
 Newest first. Beta changes move to Live when shipped.
 
+## Oct 25, 2026: Live and Beta 3.0 (1:31 PM)
+- Home golf section is half the size: the top five with tighter rows, and a status line under the title (Round 4 · Suspended in orange for weather, red while play is live). Full Leaderboard still opens the full board.
+
 ## Oct 25, 2026: Live, Beta 3.0 and Beta 4 (10:39 AM)
 - Welcome screen logo shows again on Live (the brand images were missing from the live folder).
 - Welcome logo and browser tab icon redrawn from the new L logo everywhere.
