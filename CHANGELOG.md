@@ -2,6 +2,10 @@
 
 Newest first. Beta changes move to Live when shipped.
 
+## Oct 25, 2026: Live, Beta 3.0 and Beta 4 (10:39 AM)
+- Welcome screen logo shows again on Live (the brand images were missing from the live folder).
+- Welcome logo and browser tab icon redrawn from the new L logo everywhere.
+
 ## Oct 23, 2026: Beta 4.0 — Team Rankings
 - Show available Top 25 rankings as small muted numbers before team names in Simple, Compact, Expanded and featured match views, including league scores and saved games.
 - Use the score feed's rankings; unranked teams have no number. Game-detail button labels include each team's rank.
