@@ -462,7 +462,7 @@ section.closed .bhead { border-bottom: 0; }
 .sheet { overscroll-behavior: contain; }
 #pksheet { z-index: 65; }
 /* Bottom Bar tabs: full screens above the bar, not pop-ups */
-:root[data-home="bar"] #pksheet { z-index: 55; }
+:root[data-home="bar"] #pksheet.as-tab { z-index: 55; }
 :root[data-home="bar"] .sheet.as-tab { background: var(--bg); padding: env(safe-area-inset-top, 0px) 0 calc(60px + env(safe-area-inset-bottom, 0px)); place-items: stretch; }
 :root[data-home="bar"] .sheet.as-tab .sheet-card { width: 100%; max-width: 760px; margin-inline: auto; max-height: none; height: 100%; border: 0; border-radius: 0; background: var(--bg); }
 :root[data-home="bar"] .sheet.as-tab .bhead .tog, :root[data-home="bar"] .sheet.as-tab #sheet-done, :root[data-home="bar"] .sheet.as-tab [data-set-done] { display: none; }
