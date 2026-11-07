@@ -2,6 +2,11 @@
 
 Newest first. Beta changes move to Live when shipped.
 
+## Nov 7, 2026: Live, Beta 3.0 and Beta 4 (8:55 AM)
+- Soccer favorites now match by team, not just the three-letter code: Newport County ("NEW") no longer shows as your Newcastle (also fixed on Beta 4).
+- Games with no time set yet read "Wed · TBD" instead of "Wed 12:00 AM" in Up Next and the strip.
+- Home golf section shows the round status again when play is suspended or delayed (Round 2 · Suspended).
+
 ## Oct 25, 2026: Live and Beta 3.0 (1:31 PM)
 - Home golf section is half the size: the top five with tighter rows, and a status line under the title (Round 4 · Suspended in orange for weather, red while play is live). Full Leaderboard still opens the full board.
 
