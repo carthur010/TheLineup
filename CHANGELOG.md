@@ -2,6 +2,9 @@
 
 Newest first. Beta changes move to Live when shipped.
 
+## Nov 7, 2026: Beta 4 (8:58 AM)
+- Games with no time set yet read "Wed · TBD" instead of "Wed · 12:00 AM" in My Teams and Next For Your Teams.
+
 ## Nov 7, 2026: Live, Beta 3.0 and Beta 4 (8:55 AM)
 - Soccer favorites now match by team, not just the three-letter code: Newport County ("NEW") no longer shows as your Newcastle (also fixed on Beta 4).
 - Games with no time set yet read "Wed · TBD" instead of "Wed 12:00 AM" in Up Next and the strip.
